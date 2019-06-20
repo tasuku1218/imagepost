@@ -11,8 +11,11 @@
           <%= link_to "投稿", new_post_path, class: "btn btn-primary" %>
         </li>
         <li>
-          <%= link_to "", user_path(current_user), class: "nav-link commonNavIcon profile-icon" %>
+          <%= link_to "マイページ", user_path(current_user), class:  "list-group-item list-group-item-action" %>
         </li>
+        <div class="list-group text-center">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "list-group-item list-group-item-action" %>
+        </div>        
       </ul>
     </div>
   </div>
