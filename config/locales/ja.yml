@@ -77,8 +77,9 @@ ja:
       signed_up_but_unconfirmed: '本人確認用のメールを送信しました。メール内のリンクからアカウントを有効化させてください。'
       update_needs_confirmation: 'アカウント情報を変更しました。変更されたメールアドレスの本人確認のため、本人確認用メールより確認処理をおこなってください。'
       updated: 'アカウント情報を変更しました。'
+
     sessions:
-      signed_in: 'サインインしました。'
+      signed_in: 'サインインをしました。'
       signed_out: 'サインアウトしました。'
       already_signed_out: '既にサインアウト済みです。'
     unlocks:
@@ -94,4 +95,4 @@ ja:
       not_locked: 'は凍結されていません。'
       not_saved:
         one: "エラーが発生したため %{resource} は保存されませんでした:"
-        other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした:"
+        other: "エラーが発生したため %{resource} は保存されませんでした:"

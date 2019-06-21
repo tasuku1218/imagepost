@@ -18,7 +18,7 @@
             <% end %>
 
             <% if @post.user_id == current_user.id %>
-              <%= link_to post_path(@post), method: :delete, class: "ml-auto mx-0 my-auto" do %>
+              <%= link_to post_path(@post), method: :delete, data: { confirm: "You sure?" }, class: "ml-auto mx-0 my-auto" do %>
                 <div class="delete-post-icon">
                 </div>
               <% end %>
@@ -41,7 +41,6 @@
           </div>
         </div>
         <div class="row parts">
-
           <div id="like-icon-post-<%= @post.id.to_s %>">
             <% if @post.liked_by(current_user).present? %>
               <%= link_to "いいねを取り消す", post_like_path(@post.id, @post.liked_by(current_user)), method: :DELETE, remote: true, class: "loved hide-text" %>
@@ -49,7 +48,6 @@
               <%= link_to "いいね", post_likes_path(@post), method: :POST, remote: true, class: "love hide-text" %>
             <% end %>
           </div>
-
         </div>
 
         <div id="like-text-post-<%= @post.id.to_s %>">
@@ -59,15 +57,14 @@
         <div class="post-time"><%= time_ago_in_words(@post.created_at).upcase %>前</div>
         <hr>
 
-        <%# ==========ここから追加する========== %>
         <div class="row parts" id="comment-form-post-<%= @post.id.to_s %>">
           <%= form_with model: [@post, Comment.new],  class: "w-100" do |f| %>
+            <%= f.submit "投稿する", class: 'inline-block' "btn btn-primary" %>        
             <%= f.hidden_field :user_id, value: current_user.id %>
             <%= f.hidden_field :post_id, value: @post.id %>
             <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "コメント ...", autocomplete: :off %>
           <% end %>
         </div>
-        <%# ==========ここまで追加する========== %>
 
       </div>
     </div>
