@@ -22,10 +22,14 @@
         width: 24px;
         background-size: 22px !important;
         background-repeat: no-repeat;
+        z-index:100;
       }
       .profile-icon {
         background-image: image-url("parts3.png");
       }
     }
   }
+}
+.navbar{
+z-index: 2;
 }
