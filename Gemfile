@@ -71,7 +71,7 @@ gem 'jquery-rails'
 
 gem 'devise'
 
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 
 group :production do
   gem 'pg', '0.21.0'
